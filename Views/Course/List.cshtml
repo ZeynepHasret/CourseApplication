@@ -1,0 +1,44 @@
+@model IEnumerable< MVCproject.Models.Student>
+  
+<head>
+@{
+    ViewData["Title"] = "List";
+}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootsrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+
+</head>
+<div class="container m-4">
+    <div class="card mx-auto" style="width: 500px;">
+         <div class="card-header">
+             <p>Kursa Katılanlar </p>
+        </div>
+    
+
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                        <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Confirm</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var student in Model)
+                        {
+                            <tr>
+                                <td>@student.Name</td>
+                                <td>@student.Email</td>
+                                <td>@student.Phone</td>
+                                <td>@student.Confirm</td>
+                            </tr>
+
+                        }
+
+                        </tbody>
+                            </table>
+      </div>
+</div>      

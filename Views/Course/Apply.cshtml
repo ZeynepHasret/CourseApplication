@@ -1,0 +1,54 @@
+@model MVCproject.Models.Student
+<head>
+@{
+    ViewData["Title"] = "Apply";
+}
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootsrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    </head>
+<div class="container m-4">
+    <div class="card mx-auto" style="width: 500px;">
+         <div class="card-header">
+             Başvuru Formu
+         </div>
+         <div class="card-body">
+              <form asp-action="apply" method="POST">
+    <div asp-validation-summary="All"></div>
+
+    @* <label for="name">Adınız</label>
+    <input type="text" name="name"> *@
+
+<div class="form-group">
+    <label asp-for="Name">Adınız</label>
+    <input asp-for="Name" class="form-control">
+</div>
+<div class="form-group">
+    <label asp-for="Email">Eposta</label>
+    <input asp-for="Email" class="form-control">
+</div>
+<div class="form-group">
+    <label asp-for="Phone">Telefon</label>
+    <input asp-for="Phone" class="form-control">
+</div>
+<div class="form-group">
+    <label asp-for="Confirm">Kursa katılacak mısınız?</label>
+    <select asp-for="Confirm" class="form-control">  
+     <option value="">Seçiniz</option>
+    <option value="true">Evet, geliyorum </option>
+    <option value="false">Hayır, gelmiyorum</option>
+
+    </select> 
+</div>
+   @* <input type="button" value="Submit" class="btn btn-primary btn-block" >  *@
+   
+   <button type="submit" value="Submit" class="btn btn-primary btn-block">Submit</button> 
+</form>
+
+         </div>
+        
+    </div>
+</div>
+ 
